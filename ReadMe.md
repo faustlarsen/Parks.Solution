@@ -8,7 +8,6 @@
 
 _The API will allow to create, read, update and delete state national parks. This application is built utilizing C# ASP.NET Core, its ORM Entity, MySQL Database (and Workbench) and RESTful principles. The user is able to see the in-use version of the API when using Postman/Swagger._
 
-
 ## Specs:
 * User will be able to (Get) view a list of parks
 * User will be able to (Post) create new park
@@ -16,12 +15,9 @@ _The API will allow to create, read, update and delete state national parks. Thi
 * User will be able to (Delete) delete park
 * User will be able to look up parks by its ID, State, Name and Type
 * User will be able to look up random park
-
-
   
 ## Setup/Installation Requirements
   
-
 ### Required Technologies (see install instructions below)
 
 *  _C# .NET Core Ver 2.2.0_
@@ -34,7 +30,6 @@ _The API will allow to create, read, update and delete state national parks. Thi
 
 *  _Text Editor (e.g.VisualStudio Code)_
 
-  
 
 ### .NET Installation
 
@@ -92,7 +87,6 @@ _This means .NET and C# are installed and your computer recognizes the dotnet co
 
 7.  _Open `MySQL Workbench` and select the `Local instance 3306 server`. You will need to enter the password `epicodus`. If it connects, you're all set._
 
-  
 
 #### Windows
 
