@@ -157,7 +157,6 @@ _In the command line run the following commands to install packages:_
 
   
 
-
 ### Cloning the project
 1.  _Navigate to my [Parks.Solution repo](https://github.com/faustlarsen/Parks.Solution) at https://github.com/faustlarsen/Parks.Solution_ to view the project files and commits.
 
@@ -171,7 +170,7 @@ _In the command line run the following commands to install packages:_
 
   
 
-### <span style="color:#0ec2b8">Downloading the project</span>
+### Downloading the project
 
 1.  _Navigate to my [Parks.Solution repo](https://github.com/faustlarsen/Parks.Solution) at https://github.com/faustlarsen/Parks.Solution_ to view the project files and commits.
 
@@ -181,7 +180,7 @@ _In the command line run the following commands to install packages:_
 
   
 
-### <span style="color:#0ec2b8">App Settings</span>
+### App Settings
 
 1.  _Open in the `ParkLookup/` directory the file named `appsettings.json`_
 
@@ -215,7 +214,7 @@ _In the command line run the following commands to install packages:_
 
   
 
-### <span style="color:#0ec2b8">Import Database Structure with Entity Framework Core</span>
+### Import Database Structure with Entity Framework Core
 
 1.  _Navigate to the `ParkLookup` directory in your terminal._
 
@@ -225,7 +224,7 @@ _In the command line run the following commands to install packages:_
 
   
 
-### <span style="color:#0ec2b8">Import Database Structure with MySQL Workbench</span>
+### Import Database Structure with MySQL Workbench
 
 1.  _Open MySQL Workbench and enter your password._
 
@@ -241,13 +240,9 @@ _In the command line run the following commands to install packages:_
 
 7.  _Click `Start Import`._
 
-  
 
-### <span style="color:#0ec2b8">Running Program</span>
+#### Run Application
 
-#### <span style="color:#c4f4ef">Run Application</span>
-
-  
 
 1.  _Use `constantine_yakubovski_parks.sql` file to access database_
 
@@ -259,7 +254,7 @@ _In the command line run the following commands to install packages:_
 
 5.  _Run the following command to execute this compiled code: $ `dotnet run`_
 
-  
+
 
 #### Launch the API
 
@@ -267,45 +262,87 @@ _In the command line run the following commands to install packages:_
 
 2.  _Run the command `dotnet run` to have access to the API in Postman or browser._
 
-3. _If you use browser, open the [Swagger UI](http://localhost:5000/swagger/index.html#/) to view and test the different routes of this API!
+3. _If you use browser, open the [Swagger UI](http://localhost:5000/swagger/index.html#/) to view and test the different routes of this API._
 
 
 ## API Documentation
 
-Explore the API endpoints in Postman or a browser.
+Explore the API endpoints in Postman or Swagger.
+Base URL: https://localhost:5000
 
 ### End Points
 
-Base URL: https://localhost:5000
-
-#### HTTP Request Structure
-
 ```
-
+- GET /api/reviews
+- POST /api/reviews
+- GET /api/reviews/{id}
+- PUT /api/reviews/{id}
+- DELETE /api/reviews/{id}
 
 ```
 
 #### Example Query
-
+http://localhost:5000/api/Parks/2
 
 ```
-
+{
+  "parkId": 2,
+  "name": "Grand Canyon",
+  "state": "Arizona",
+  "type": "National Park",
+  "description": "The Grand Canyon, carved by the mighty Colorado River. Millions of years of erosion have exposed the multicolored layers of the Colorado Plateau in mesas and canyon walls."
+}
 
 ```
 
 #### Sample JSON Response
+http://localhost:5000/api/Parks?state=utah
 
+```
+[
+  {
+    "parkId": 6,
+    "name": "Coral Pink Sand Dunes",
+    "state": "Utah",
+    "type": "State Park",
+    "description": "Preserves the only dune field on the Colorado Plateau, with a unique color caused by iron oxides and minerals in the Navajo sandstone."
+  }
+]
 
 ```
 
+#### Get Random Park  
+http://localhost:5000/api/parks/?random=true
 
 
 ```
+[
+  {
+    "parkId": 8,
+    "name": "Catharine Valley Trail",
+    "state": "New York",
+    "type": "State Park",
+    "description": "Encompasses a planned 12-mile (19 km) recreation trail that follows abandoned railroad grades and canal towpaths between Watkins Glen and Horseheads."
+  }
+]
+
+```
+
 
 ### Here is an example how to use Swagger
 
-
 Open URL: http://localhost:5000/swagger/index.html#/
+
+1. Click on Parks
+2. Click on Get
+3. Click on Try it out
+
+[![Image from Gyazo](https://i.gyazo.com/b3a471066f09067d6bf7c7c3741205a1.gif)](https://gyazo.com/b3a471066f09067d6bf7c7c3741205a1)
+
+4. Type State
+5. Click Execute
+
+[![Image from Gyazo](https://i.gyazo.com/7980ac033c637d29e881ed172c90f85d.gif)](https://gyazo.com/7980ac033c637d29e881ed172c90f85d)
 
 
 ## Known Bugs
@@ -318,7 +355,7 @@ _No known bags_
 
 _If you have any questions, ideas or concerns, please, contact:_
 
-* Constantine Yakubovski at [faustlarsen@gmail.com](mailto:faustlarsen@gmail.com)_
+ Constantine Yakubovski at [faustlarsen@gmail.com](mailto:faustlarsen@gmail.com)
 
 
 ## Technologies Used
