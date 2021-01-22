@@ -19,7 +19,7 @@ namespace ParksLookup.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Park>> Get(string name, string state, string type)
+        public ActionResult<IEnumerable<Park>> Get(string name, string state, string type, bool random)
         {
             var query = _db.Parks.AsQueryable();
             if (name != null)
@@ -34,8 +34,15 @@ namespace ParksLookup.Controllers
             {
                 query = query.Where(entry => entry.Type == type);
             }
-            List<Park> parksList = query.ToList();
-            return parksList;
+            if (random != false)
+            {
+                Random rndm = new Random();
+                List<Park> returnedId = _db.Parks.ToList();
+
+                int randomPark = rndm.Next(1,10);
+                query = query.Where(entry => entry.ParkId == randomPark);
+            }
+            return query.ToList();
         }
 
         [HttpGet("{id}")]
