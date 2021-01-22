@@ -14,7 +14,8 @@ _The API will allow to create, read, update and delete state national parks. Thi
 * User will be able to (Post) create new park
 * User will be abale to (Put) edit park
 * User will be able to (Delete) delete park
-* User will be able to look up parks by its ID, State, Name.
+* User will be able to look up parks by its ID, State, Name and Type
+* User will be able to look up random park
 
 
   

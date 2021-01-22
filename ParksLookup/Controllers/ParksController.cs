@@ -41,6 +41,7 @@ namespace ParksLookup.Controllers
 
                 int randomPark = rndm.Next(1,10);
                 query = query.Where(entry => entry.ParkId == randomPark);
+                
             }
             return query.ToList();
         }
