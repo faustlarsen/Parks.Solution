@@ -8,8 +8,8 @@ using ParksLookup.Models;
 namespace ParksLookup.Migrations
 {
     [DbContext(typeof(ParksLookupContext))]
-    [Migration("20210122182817_Type")]
-    partial class Type
+    [Migration("20210123213636_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -18,27 +18,35 @@ namespace ParksLookup.Migrations
                 .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("ParksLookup.Models.Park", b =>
+            modelBuilder.Entity("ParksLookup.Models.NationalPark", b =>
                 {
-                    b.Property<int>("ParkId")
+                    b.Property<int>("NationalParkId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(100000);
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
-                    b.Property<string>("State");
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasMaxLength(20);
 
-                    b.Property<string>("Type");
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasMaxLength(20);
 
-                    b.HasKey("ParkId");
+                    b.HasKey("NationalParkId");
 
-                    b.ToTable("Parks");
+                    b.ToTable("NationalParks");
 
                     b.HasData(
                         new
                         {
-                            ParkId = 1,
+                            NationalParkId = 1,
                             Description = "Split into the separate Rincon Mountain and Tucson Mountain districts, this park is evidence that the dry Sonoran Desert is still home to a great variety of life spanning six biotic communities.",
                             Name = "Saguaro",
                             State = "Arizona",
@@ -46,7 +54,7 @@ namespace ParksLookup.Migrations
                         },
                         new
                         {
-                            ParkId = 2,
+                            NationalParkId = 2,
                             Description = "The Grand Canyon, carved by the mighty Colorado River. Millions of years of erosion have exposed the multicolored layers of the Colorado Plateau in mesas and canyon walls.",
                             Name = "Grand Canyon",
                             State = "Arizona",
@@ -54,15 +62,7 @@ namespace ParksLookup.Migrations
                         },
                         new
                         {
-                            ParkId = 3,
-                            Description = "This portion of the Chinle Formation has a large concentration of 225-million-year-old petrified wood. Dinosaur fossils and over 350 Native American sites are protected in this park",
-                            Name = "Petrified Forest",
-                            State = "Arizona",
-                            Type = "National Park"
-                        },
-                        new
-                        {
-                            ParkId = 4,
+                            NationalParkId = 3,
                             Description = "Glacier Bay contains tidewater glaciers, mountains, fjords, and a temperate rainforest, and is home to large populations of grizzly bears, mountain goats, whales, seals, and eagles.",
                             Name = "Glacier Bay",
                             State = "Alaska",
@@ -70,39 +70,7 @@ namespace ParksLookup.Migrations
                         },
                         new
                         {
-                            ParkId = 5,
-                            Description = "Preserves a diverse desert landscape at the foot of the Santa Catalina Mountains.",
-                            Name = "Catalina State Park",
-                            State = "Arizona",
-                            Type = "State Park"
-                        },
-                        new
-                        {
-                            ParkId = 6,
-                            Description = "Preserves the only dune field on the Colorado Plateau, with a unique color caused by iron oxides and minerals in the Navajo sandstone.",
-                            Name = "Coral Pink Sand Dunes",
-                            State = "Utah",
-                            Type = "State Park"
-                        },
-                        new
-                        {
-                            ParkId = 7,
-                            Description = "Interprets an island in San Francisco Bay whose history encompasses Coast Miwok prehistory, ranching, the 1910–1940 Angel Island Immigration Station, and long military use.",
-                            Name = "Angel Island State Park",
-                            State = "California",
-                            Type = "State Park"
-                        },
-                        new
-                        {
-                            ParkId = 8,
-                            Description = "Encompasses a planned 12-mile (19 km) recreation trail that follows abandoned railroad grades and canal towpaths between Watkins Glen and Horseheads.",
-                            Name = "Catharine Valley Trail",
-                            State = "New York",
-                            Type = "State Park"
-                        },
-                        new
-                        {
-                            ParkId = 9,
+                            NationalParkId = 4,
                             Description = "Covering most of Mount Desert Island and other coastal islands, Acadia features the tallest mountain on the Atlantic coast of the United States, granite peaks, ocean shoreline, woodlands, and lakes.",
                             Name = "Acadia",
                             State = "Maine",
@@ -110,11 +78,79 @@ namespace ParksLookup.Migrations
                         },
                         new
                         {
-                            ParkId = 10,
+                            NationalParkId = 5,
                             Description = "Located in Biscayne Bay, this park at the north end of the Florida Keys has four interrelated marine ecosystems: mangrove forest, the Bay, the Keys, and coral reefs.",
                             Name = "Biscayne",
                             State = "Florida",
                             Type = "National Park"
+                        });
+                });
+
+            modelBuilder.Entity("ParksLookup.Models.StatePark", b =>
+                {
+                    b.Property<int>("StateParkId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(100000);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasMaxLength(20);
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasMaxLength(20);
+
+                    b.HasKey("StateParkId");
+
+                    b.ToTable("StateParks");
+
+                    b.HasData(
+                        new
+                        {
+                            StateParkId = 1,
+                            Description = "Preserves a diverse desert landscape at the foot of the Santa Catalina Mountains.",
+                            Name = "Catalina State Park",
+                            State = "Arizona",
+                            Type = "State Park"
+                        },
+                        new
+                        {
+                            StateParkId = 2,
+                            Description = "Preserves the only dune field on the Colorado Plateau, with a unique color caused by iron oxides and minerals in the Navajo sandstone.",
+                            Name = "Coral Pink Sand Dunes",
+                            State = "Utah",
+                            Type = "State Park"
+                        },
+                        new
+                        {
+                            StateParkId = 3,
+                            Description = "Interprets an island in San Francisco Bay whose history encompasses Coast Miwok prehistory, ranching, the 1910–1940 Angel Island Immigration Station, and long military use.",
+                            Name = "Angel Island State Park",
+                            State = "California",
+                            Type = "State Park"
+                        },
+                        new
+                        {
+                            StateParkId = 4,
+                            Description = "Encompasses a planned 12-mile (19 km) recreation trail that follows abandoned railroad grades and canal towpaths between Watkins Glen and Horseheads.",
+                            Name = "Catharine Valley Trail",
+                            State = "New York",
+                            Type = "State Park"
+                        },
+                        new
+                        {
+                            StateParkId = 5,
+                            Description = "Not only is this sprawling 200,000-acre park home to Northern Maine's beloved Mount Katahdin, it's also the domain of a killer variety of wildlife, from hawks to black bears who make their home amid the park's peaceful lakes and waterfalls.",
+                            Name = "Baxter State Park",
+                            State = "Maine",
+                            Type = "State Park"
                         });
                 });
 #pragma warning restore 612, 618

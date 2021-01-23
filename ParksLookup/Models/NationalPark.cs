@@ -6,7 +6,7 @@ namespace ParksLookup.Models
   {
     public int NationalParkId { get; set; }
     [Required]
-    [StringLength(20)]
+    [StringLength(100)]
     public string Name { get; set; }
     [Required]
     [StringLength(20)]
