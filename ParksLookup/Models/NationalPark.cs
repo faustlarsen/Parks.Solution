@@ -2,9 +2,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ParksLookup.Models
 {
-  public class Park
+  public class NationalPark
   {
-    public int ParkId { get; set; }
+    public int NationalParkId { get; set; }
     [Required]
     [StringLength(20)]
     public string Name { get; set; }
@@ -15,7 +15,7 @@ namespace ParksLookup.Models
     [StringLength(20)]
     public string Type { get; set; }
     [Required]
-    [StringLength(1000)]
+    [StringLength(100000)]
     public string Description { get; set; }
   }
-} 
+}
