@@ -10,18 +10,18 @@ namespace ParksLookup.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ParksController : ControllerBase
+    public class StateParksController : ControllerBase
     {
         private ParksLookupContext _db;
-        public ParksController(ParksLookupContext db)
+        public StateParksController(ParksLookupContext db)
         {
             _db = db;
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Park>> Get(string name, string state, string type, bool random)
+        public ActionResult<IEnumerable<StatePark>> Get(string name, string state, string type, bool random)
         {
-            var query = _db.Parks.AsQueryable();
+            var query = _db.StateParks.AsQueryable();
             if (name != null)
             {
                 query = query.Where(entry => entry.Name == name);
@@ -37,32 +37,32 @@ namespace ParksLookup.Controllers
             if (random != false)
             {
                 Random rndm = new Random();
-                List<Park> returnedId = _db.Parks.ToList();
+                List<StatePark> returnedId = _db.StateParks.ToList();
 
-                int randomPark = rndm.Next(1,10);
-                query = query.Where(entry => entry.ParkId == randomPark);
+                int randomPark = rndm.Next(1,5);
+                query = query.Where(entry => entry.StateParkId == randomPark);
                 
             }
             return query.ToList();
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Park> Get(int id)
+        public ActionResult<StatePark> Get(int id)
         {
-            return _db.Parks.FirstOrDefault(entry => entry.ParkId == id);
+            return _db.StateParks.FirstOrDefault(entry => entry.StateParkId == id);
         }
 
         [HttpPost]
-        public void Post([FromBody] Park park)
+        public void Post([FromBody] StatePark park)
         {
-            _db.Parks.Add(park);
+            _db.StateParks.Add(park);
             _db.SaveChanges();
         }
 
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Park park)
+        public void Put(int id, [FromBody] StatePark park)
         {
-            park.ParkId = id;
+            park.StateParkId = id;
             _db.Entry(park).State = EntityState.Modified;
             _db.SaveChanges();
         }
@@ -70,8 +70,8 @@ namespace ParksLookup.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            Park parkToDelete = _db.Parks.FirstOrDefault(entry => entry.ParkId == id);
-            _db.Parks.Remove(parkToDelete);
+            StatePark parkToDelete = _db.StateParks.FirstOrDefault(entry => entry.StateParkId == id);
+            _db.StateParks.Remove(parkToDelete);
             _db.SaveChanges();
         }
     }
