@@ -268,16 +268,23 @@ Base URL: https://localhost:5000
 ### End Points
 
 ```
-- GET /api/reviews
-- POST /api/reviews
-- GET /api/reviews/{id}
-- PUT /api/reviews/{id}
-- DELETE /api/reviews/{id}
+- GET /api/NationalParks
+- POST /api/NationalParks
+- GET /api/NationalParks/{id}
+- PUT /api/NationalParks/{id}
+- DELETE /api/NationalParks/{id}
+
+
+- GET /api/StateParks
+- POST /api/StateParks
+- GET /api/StateParks/{id}
+- PUT /api/StateParks/{id}
+- DELETE /api/StateParks/{id}
 
 ```
 
 #### Example Query
-http://localhost:5000/api/Parks/2
+http://localhost:5000/api/nationalparks/2
 
 ```
 {
@@ -291,34 +298,34 @@ http://localhost:5000/api/Parks/2
 ```
 
 #### Sample JSON Response
-http://localhost:5000/api/Parks?state=utah
+http://localhost:5000/api/stateparks/2
 
 ```
 [
   {
-    "parkId": 6,
+    "stateParkId": 2,
     "name": "Coral Pink Sand Dunes",
     "state": "Utah",
     "type": "State Park",
     "description": "Preserves the only dune field on the Colorado Plateau, with a unique color caused by iron oxides and minerals in the Navajo sandstone."
-  }
+}
 ]
 
 ```
 
 #### Get Random Park  
-http://localhost:5000/api/parks/?random=true
+http://localhost:5000/api/stateparks/?random=true
 
 
 ```
 [
-  {
-    "parkId": 8,
-    "name": "Catharine Valley Trail",
-    "state": "New York",
-    "type": "State Park",
-    "description": "Encompasses a planned 12-mile (19 km) recreation trail that follows abandoned railroad grades and canal towpaths between Watkins Glen and Horseheads."
-  }
+    {
+        "stateParkId": 4,
+        "name": "Catharine Valley Trail",
+        "state": "New York",
+        "type": "State Park",
+        "description": "Encompasses a planned 12-mile (19 km) recreation trail that follows abandoned railroad grades and canal towpaths between Watkins Glen and Horseheads."
+    }
 ]
 
 ```
@@ -328,16 +335,16 @@ http://localhost:5000/api/parks/?random=true
 
 Open URL: http://localhost:5000/swagger/index.html#/
 
-1. Click on Parks
-2. Click on Get
-3. Click on Try it out
+1. Click NationalParks
+2. Click Get
+3. Click Try it out
 
-[![Image from Gyazo](https://i.gyazo.com/b3a471066f09067d6bf7c7c3741205a1.gif)](https://gyazo.com/b3a471066f09067d6bf7c7c3741205a1)
+[![Image from Gyazo](https://i.gyazo.com/b0963823c13d18f9c734e47db03746fa.gif)](https://gyazo.com/b0963823c13d18f9c734e47db03746fa)
 
 4. Type State
 5. Click Execute
 
-[![Image from Gyazo](https://i.gyazo.com/7980ac033c637d29e881ed172c90f85d.gif)](https://gyazo.com/7980ac033c637d29e881ed172c90f85d)
+[![Image from Gyazo](https://i.gyazo.com/9b2e84a92c0e2546bddd55be2588f8ca.gif)](https://gyazo.com/9b2e84a92c0e2546bddd55be2588f8ca)
 
 
 ## Known Bugs

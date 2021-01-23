@@ -30,20 +30,37 @@ CREATE TABLE `__EFMigrationsHistory` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `Parks`
+-- Table structure for table `NationalParks`
 --
 
-DROP TABLE IF EXISTS `Parks`;
+DROP TABLE IF EXISTS `NationalParks`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `Parks` (
-  `ParkId` int(11) NOT NULL AUTO_INCREMENT,
-  `Name` longtext,
-  `State` longtext,
-  `Description` longtext,
-  `Type` longtext,
-  PRIMARY KEY (`ParkId`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `NationalParks` (
+  `NationalParkId` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(100) NOT NULL,
+  `State` varchar(20) NOT NULL,
+  `Type` varchar(20) NOT NULL,
+  `Description` longtext NOT NULL,
+  PRIMARY KEY (`NationalParkId`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `StateParks`
+--
+
+DROP TABLE IF EXISTS `StateParks`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `StateParks` (
+  `StateParkId` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(100) NOT NULL,
+  `State` varchar(20) NOT NULL,
+  `Type` varchar(20) NOT NULL,
+  `Description` longtext NOT NULL,
+  PRIMARY KEY (`StateParkId`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -55,4 +72,4 @@ CREATE TABLE `Parks` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-22 16:26:08
+-- Dump completed on 2021-01-23 14:44:56
