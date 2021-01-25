@@ -1,4 +1,4 @@
-#### Parks Lookup API app
+ #### Parks Lookup API app
 
 #### _Initialization Date: 01/22/2021_
 
@@ -287,14 +287,15 @@ Base URL: https://localhost:5000
 http://localhost:5000/api/nationalparks/2
 
 ```
-{
-  "parkId": 2,
-  "name": "Grand Canyon",
-  "state": "Arizona",
-  "type": "National Park",
-  "description": "The Grand Canyon, carved by the mighty Colorado River. Millions of years of erosion have exposed the multicolored layers of the Colorado Plateau in mesas and canyon walls."
-}
-
+[
+  {
+    "parkId": 2,
+    "name": "Grand Canyon",
+    "state": "Arizona",
+    "type": "National Park",
+    "description": "The Grand Canyon, carved by the mighty Colorado River. Millions of years of erosion have exposed the multicolored layers of the Colorado Plateau in mesas and canyon walls."
+  }
+]
 ```
 
 #### Sample JSON Response
@@ -308,7 +309,7 @@ http://localhost:5000/api/stateparks/2
     "state": "Utah",
     "type": "State Park",
     "description": "Preserves the only dune field on the Colorado Plateau, with a unique color caused by iron oxides and minerals in the Navajo sandstone."
-}
+  }
 ]
 
 ```
@@ -319,13 +320,13 @@ http://localhost:5000/api/stateparks/?random=true
 
 ```
 [
-    {
-        "stateParkId": 4,
-        "name": "Catharine Valley Trail",
-        "state": "New York",
-        "type": "State Park",
-        "description": "Encompasses a planned 12-mile (19 km) recreation trail that follows abandoned railroad grades and canal towpaths between Watkins Glen and Horseheads."
-    }
+  {
+    "stateParkId": 4,
+    "name": "Catharine Valley Trail",
+    "state": "New York",
+    "type": "State Park",
+    "description": "Encompasses a planned 12-mile (19 km) recreation trail that follows abandoned railroad grades and canal towpaths between Watkins Glen and Horseheads."
+  }
 ]
 
 ```
@@ -366,8 +367,6 @@ _If you have any questions, ideas or concerns, please, contact:_
 *  _C#_
 
 *  _.NET_
-
-*  _MySQL_
 
 *  _MySQL Workbench_
 

@@ -39,7 +39,7 @@ namespace ParksLookup.Controllers
                 Random rndm = new Random();
                 List<StatePark> returnedId = _db.StateParks.ToList();
 
-                int randomPark = rndm.Next(1,5);
+                int randomPark = rndm.Next(1,_db.StateParks.Count());
                 query = query.Where(entry => entry.StateParkId == randomPark);
                 
             }
